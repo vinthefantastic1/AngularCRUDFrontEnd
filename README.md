@@ -2,7 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
-It is copied from [https://www.codaffection.com/asp-net-core-article/angular-crud-with-asp-net-core-web-api/](https://www.codaffection.com/asp-net-core-article/angular-crud-with-asp-net-core-web-api/)
+This is the front end of the tutorial at:
+    [https://www.codaffection.com/asp-net-core-article/angular-crud-with-asp-net-core-web-api/](https://www.codaffection.com/asp-net-core-article/angular-crud-with-asp-net-core-web-api/)
+
+The backend for this project is here:
+    [https://github.com/vinthefantastic1/AngularCRUDApp](https://github.com/vinthefantastic1/AngularCRUDApp)
+
 
 ## Development server
 
