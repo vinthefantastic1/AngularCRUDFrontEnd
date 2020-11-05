@@ -1,0 +1,33 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <input type="hidden" name="PMId" [value]="service.formData.PMId">
+    <div class="form-group">
+        <label>CARD OWNER NAME</label>
+        <input name="CardOwnerName" #CardOwnerName="ngModel" [(ngModel)]="service.formData.CardOwnerName"
+            class="form-control form-control-lg" placeholder="Full Name" required
+            [class.invalid]="CardOwnerName.invalid &#038;&#038; CardOwnerName.touched">
+    </div>
+    <div class="form-group">
+        <label>CARD NUMBER</label>
+        <input name="CardNumber" #CardNumber="ngModel" [(ngModel)]="service.formData.CardNumber"
+            class="form-control form-control-lg" placeholder="16 Digit Card Number" required maxlength="16"
+            minlength="16" [class.invalid]="CardNumber.invalid &#038;&#038; CardNumber.touched">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label>CVV</label>
+            <input type="password" name="CVV" #CVV="ngModel" [(ngModel)]="service.formData.CVV"
+                class="form-control form-control-lg" placeholder="CVV" required maxlength="3" minlength="3"
+                [class.invalid]="CVV.invalid &#038;&#038; CVV.touched">
+        </div>
+        <div class="form-group col-md-9">
+            <label>VALID THROUGH</label>
+            <input name="ExpirationDate" #ExpirationDate="ngModel" [(ngModel)]="service.formData.ExpirationDate"
+                class="form-control form-control-lg" placeholder="MM/YY" required maxlength="5" minlength="5"
+                [class.invalid]="ExpirationDate.invalid &#038;&#038; ExpirationDate.touched">
+        </div>
+
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>
