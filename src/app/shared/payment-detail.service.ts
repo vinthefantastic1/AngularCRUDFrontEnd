@@ -8,24 +8,24 @@ import { HttpClient } from "@angular/common/http";
 export class PaymentDetailService {
 
   formData: PaymentDetail= new PaymentDetail();
-  readonly rootURL = 'https://localhost:44231/api';
+  readonly rootURL = 'https://localhost:44321/api';
   //readonly rootURL = 'https://localhost:44321/api'
   list : PaymentDetail[];
 
   constructor(private http: HttpClient) { }
 
   postPaymentDetail() {
-    return this.http.post(`${this.rootURL}/PaymentDetail`, this.formData);
+    return this.http.post(`${this.rootURL}/PaymentDetails`, this.formData);
   }
   putPaymentDetail() {
-    return this.http.put(`${this.rootURL}/PaymentDetail/${this.formData.PMId}`, this.formData);
+    return this.http.put(`${this.rootURL}/PaymentDetails/${this.formData.PMId}`, this.formData);
   }
   deletePaymentDetail(id) {
-    return this.http.delete(`${this.rootURL}/PaymentDetail/${id}`);
+    return this.http.delete(`${this.rootURL}/PaymentDetails/${id}`);
   }
 
   refreshList() {
-    this.http.get(`${this.rootURL}/PaymentDetail/`)
+    this.http.get(`${this.rootURL}/PaymentDetails/`)
       .toPromise()
       .then(res => this.list = res as PaymentDetail[]);
   }
